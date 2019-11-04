@@ -1,0 +1,57 @@
+-
+    var header = '#experience'
+    var experienceList = [
+    {
+      title: 'Junior Front End Developer',
+      date: '2019 April – present',
+      company: 'BitBee Ltd',
+      responsabilityList: [
+             'Helping fellow co-workers to better understand how the web works',
+        'Building websites in a team to increase efficiency and to deliver better and faster products',
+        'Actively learning and applying HTML5, CSS3, JavaScript',
+        'Plan the architecture of a project together with the BitBee team and execute it to increase the chances of a successful project',
+        'Research and development with Front End technologies like HTML5, CSS3',
+        'Contributing in building a project starter for rapid project prototyping using Pug and Sass to deliver pure CSS & HTML projects',
+        'Build projects that are quicker and faster to load and render than all of the other tested website (according to Pingdom tools)',
+        'Build projects that score 100/100 on Google page speed on both mobile and desktop',
+      ]
+    },
+    {
+      title: 'Internship - Full Stack Developer',
+      company: '2018 Aug - 2019 Feb',
+      date: 'Drift Data Systems',
+      responsabilityList: [
+ 'Actively learning and applying JavaScript, TypeScript, Angular, NodeJS and SQL',
+        'Software testing and fixing bugs',
+        'Contributing to the codebase',
+      ]
+    },
+    {
+      title: 'Junior web developer',
+      company: 'Super FaceBook',
+      date: '2010 Oct - 2017 Nov',
+      responsabilityList: [
+        `To use Company-standard tools (Visual Studio, C#, MVC, SQL, Javascript, JQuery, HTML, CSS, GIT, Umbraco/Sitecore) to deliver Web sites and digital applications with data stored in RDBMS such as SQL Server `,
+        `To attend project and team meetings and liaise with other Developers, Systems Analysts, Management and end users, in discussing system development and design Develop code in line with best security practices`,
+        `Working with various functional departments and IT to identify and resolve any problems with the applications `,
+        `Carrying out application testing`
+      ]
+    }
+  ]
+#experience
+.experience
+    .experience__header=header
+    input.experience__input(type="radio", name="same-name", id="experience-default")
+    each experience, key in experienceList
+        input.experience__input(type="radio", name="same-name", id=`experience-id-${key}`)
+        label.experience__title(for=`experience-id-${key}`)
+            | #{experience.title}
+            label(for="experience-default")
+                span.my-cv__icon--plus
+        .experience__details
+            .experience__top
+                .experience__date=experience.date
+                .experience__company=experience.company
+            .experience__list
+                each responsability in experience.responsabilityList
+                    .experience__responsability=responsability

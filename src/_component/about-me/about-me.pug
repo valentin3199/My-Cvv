@@ -1,0 +1,39 @@
+-
+    var header = '#about me'
+    var imagePath = "asset/image/vali-photo.jpg"
+    var myFullName = "Valentin Nicolae"
+    var myTitle = "Junior Web Developer"
+    var slogan = `Every day I push my limits.`
+    var achievements = {
+        title: 'Achievement',
+        content: 'I taught myself web development while working a full-time job and it was the greatest adventure ever! I am proud and grateful to be part of the coding community. May the source be with you! (◕‿◕)',
+    }
+    var coolStuff = {
+        title: 'grab cool stuff',
+        buttonList: [
+            {
+              url: 'https://github.com/valentin3199',
+              icon: 'github',
+              label: 'Click to visit the Github project source',
+            }
+        ]
+    }
+//- the view comes here
+#about-me
+.about-me
+    .about-me__header=header
+    .about-me__avatar-wrapper
+        img.about-me__avatar(src=imagePath)
+    .about-me__full-name=myFullName
+    .about-me__title=myTitle
+    .about-me__slogan=slogan
+
+    .about-me__title=achievements.title
+    .about-me__content=achievements.content
+
+    .about-me__title=coolStuff.title
+    .about-me__link-list
+        each button in coolStuff.buttonList
+            a.about-me__link(href=button.url)
+                span.about-me__link-description=button.label
+                span(class=`my-cv__icon--${button.icon}`)

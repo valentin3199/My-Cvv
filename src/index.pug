@@ -1,0 +1,13 @@
+extends _component/layout/page
+block cool-config
+  -
+    var myTitleForGoogleSearch = 'My ultra awesome CV'
+    var myDescriptionForGoogleSearch = 'This is made using PURE HTML5 and CSS3 techniques'
+block awesome-content
+  include _component/landing-page/landing-page
+  include _component/about-me/about-me
+  //- include _component/award/award
+  include _component/what-i-can-do/what-i-can-do
+  include _component/experience/experience
+  //- include _component/client/client
+  include _component/menu/menu
